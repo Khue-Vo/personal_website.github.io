@@ -73,6 +73,15 @@
   display: block;
 }
 
+/*project images*/
+.project-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5rem auto; /* Optional: centers the image and adds breathing room */
+    border-radius: 6px;  /* Optional: gives the image soft, clean corners */
+}
+
 @media only screen and (max-width: 800px) {
   .footer-image {
     height: 300px;

@@ -1,4 +1,5 @@
 import os
+import re
 import frontmatter
 import markdown
 from flask import Flask, current_app, render_template, send_from_directory, abort
@@ -34,7 +35,9 @@ def project_detail(entry):
         abort(404)
         
     post = frontmatter.load(file_path)
-    html_content = markdown.markdown(post.content)
+    raw_markdown = post.content
+    fixed_markdown = fixed_markdown = re.sub(r'\((\.\.\/)*image\/', r'(/static/image/', raw_markdown)
+    html_content = markdown.markdown(fixed_markdown)
     
     return render_template(
         'content.html',
