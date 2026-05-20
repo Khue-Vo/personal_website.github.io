@@ -34,24 +34,25 @@
     <script src="{{ url_for('static', filename='scripts/htmx-bundle.min.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/app.js') }}"></script>
 
-    <header>
-        <a href="{{ url_for('index') }}">Khue H. Vo</a>'s Personal Space
-    </header>
+    <div class="container">
+        <div class="header">
+            <a href="{{ url_for('index') }}">Khue H. Vo</a>'s Personal Space
+        </div>
 
-    <nav>
-        <a href="{{ url_for('index') }}">About Me</a>
-        <a href="{{ url_for('projects') }}">Projects & Experiences</a>
-        <a href="{{ url_for('resume') }}">Resume</a>
-    </nav>
+        <div class="navigation">
+            <a href="{{ url_for('index') }}">About Me</a>
+            <a href="{{ url_for('projects') }}">Projects & Experiences</a>
+            <a href="{{ url_for('resume') }}">Resume</a>
+        </div>
 
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+        <div class="body">
+            {% block content %}{% endblock %}
+        </div>
 
-    <footer>
-        <p>© 2026 Senior Capstone Portfolio | Built with Flask</p>
-    </footer>
-
+        <div class="footer">
+            <p>© 2026 Senior Capstone Portfolio | Built with Flask</p>
+        </div>
+    </div>
     <div class="footer-image">
       <canvas id="footer-canvas"></canvas>
     </div>

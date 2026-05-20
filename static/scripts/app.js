@@ -98,17 +98,17 @@
       vec2 p = gl_FragCoord.xy * scale;
 
       // Wind Waker colors
-      vec3 lightBright = vec3(0.10, 0.42, 0.70);
-      vec3 lightDark = vec3(0.04, 0.22, 0.44);
-      vec3 lightPageBg = vec3(1.0, 1.0, 1.0);
+      vec3 lightBright = vec3(1.0, 0.427, 0.0);       // #ff6d00 (Flame Orange)
+      vec3 lightDark   = vec3(0.235, 0.035, 0.424);   // #3c096c (Velvet Purple)
+      vec3 lightPageBg = vec3(0.886, 0.800, 0.941);   // #e2ccf0 (UPDATED: Matches your lavender background!)
 
-      vec3 darkBright = vec3(0.32, 0.55, 0.82);
-      vec3 darkDark = vec3(0.12, 0.24, 0.40);
-      vec3 darkPageBg = vec3(0.106, 0.192, 0.337);
+      vec3 darkBright  = vec3(1.0, 0.62, 0.0);        // #ff9e00 (Radiant Neon Orange)
+      vec3 darkDark    = vec3(0.141, 0.0, 0.275);     // #240046 (Deepest Purple)
+      vec3 darkPageBg  = vec3(0.086, 0.0, 0.173);     // #16002c (Obsidian Purple Background)
 
       // Hover accent colors (red from --secondary-color)
-      vec3 lightAccent = vec3(0.804, 0.055, 0.055);  // #cd0e0e
-      vec3 darkAccent = vec3(1.0, 0.4, 0.4);         // #ff6666
+      vec3 lightAccent = vec3(0.482, 0.173, 0.749);   // #7b2cbf (Deep Violet contrast)
+      vec3 darkAccent  = vec3(1.0, 0.475, 0.0);       // #ff7900 (Punchy Warning Orange)
 
       vec3 bright = mix(lightBright, darkBright, u_isDark);
       vec3 dark = mix(lightDark, darkDark, u_isDark);

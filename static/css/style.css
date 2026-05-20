@@ -2,21 +2,28 @@
 
 /* colors */
 :root {
-  --background-color: light-dark(#ffffff, #1b3156);
-  --text-color: light-dark(#000000, #dce7f3);
-  --primary-color: light-dark(#115ca1, #66b3ff);
-  --secondary-color: light-dark(#cd0e0e, #ff6666);
-  --header-color: light-dark(#1b3156, #96afda);
-  --faded-color: light-dark(#7b8894, #aec3d6);
-  --border-color: light-dark(#adbac7, #819bb4);
-  --code-background-color: light-dark(#eee, #2a3f64);
-  --code-block-background-color: #fafafa;
-  --code-block-text-color: #000;
-  --table-background-color: light-dark(#fafafa, #243552);
-  --table-border-color: light-dark(#ddd, #384c6b);
-  --pre-shadow: light-dark(rgba(200, 200, 200, 0.4), rgba(0, 0, 0, 0.3));
-  --hr-shadow: light-dark(var(--border-color), #0b1a33);
-  --date-warning-text-color: light-dark(#a07f10, #ee761a);
+  /* Core Layout - Deep Purple/Black in dark mode, clean pop in light mode */
+  --background-color: light-dark(#e2ccf0, #16002c);       /* Clean White vs Deepest Obsidian Purple */
+  --text-color: light-dark(#240046, #e2ccf0);             /* Darkest Purple vs Bright Lavender-White */
+  /* Brand Accents - Using your oranges for high contrast actions */
+  --primary-color: light-dark(#ff6d00, #ff9e00);          /* Flame Orange vs Radiant Neon Orange */
+  --secondary-color: light-dark(#7b2cbf, #ff7900);        /* Deep Violet vs Punchy Warning Orange */
+    /* Typography Hierarchy */
+  --header-color: light-dark(#3c096c, #9d4edd);           /* Velvet Purple vs Electric Magenta-Purple */
+  --faded-color: light-dark(#5a189a, #7b2cbf);            /* Mid-tone Purples for subtext/dates */
+    /* Borders and Containers */
+  --border-color: light-dark(#e2ccf0, #3c096c);           /* Soft Lavender vs Solid Royal Purple border */
+  --code-background-color: light-dark(#d3bce3, #240046);  /* Lavender Gray vs Deep Midnight Code box */
+    /* Code Blocks (Fenced elements) */
+  --code-block-background-color: #240046;                 /* Fixed deep dark purple background for code */
+  --code-block-text-color: #ff9e00;                       /* Fixed electric orange text for code syntax */
+    /* Tables & Lists */
+  --table-background-color: light-dark(#faf6fe, #1e0238);
+  --table-border-color: light-dark(#d3bce3, #5a189a);
+    /* Shadows and Warnings */
+  --pre-shadow: light-dark(rgba(90, 24, 154, 0.15), rgba(0, 0, 0, 0.5));
+  --hr-shadow: light-dark(var(--border-color), #100022);
+  --date-warning-text-color: light-dark(#ff6d00, #ff9100); /* High-visibility Oranges */
   color-scheme: light dark;
 
   &:not([data-initial-load="true"]) {
@@ -136,12 +143,6 @@ h1 em                       { color: black; font-size: 32px; display: block;
 /* layout elements */
 div.container               { width: 100%; max-width: 940px; margin: 38px auto; padding: 0 40px; flex: 1; box-sizing: border-box; }
 div.header                  { float: left; }
-div.header a:before         { content: ""; background: url(/static/avatar-tiny.jpg) no-repeat;
-                              background-size: 32px; width: 32px; height: 32px;
-                              display: block; float: left; margin-right: 12px;
-                              margin-top: -4px; border: 1px solid var(--primary-color); border-radius: 50%;
-                              box-shadow: 0 0 7px var(--hr-shadow); }
-div.header a:hover:before   { border-color: var(--secondary-color); }
 div.navigation              { float: right; }
 div.header, div.navigation  { height: 25px; margin-bottom: 37px; }
 div.navigation ul           { margin: 0; padding: 0; list-style: none; }
