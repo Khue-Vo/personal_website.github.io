@@ -7,6 +7,37 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <div class="header-image">
+      <canvas id="header-canvas"></canvas>
+    </div>
+    <script>
+      let $THEME = null;
+
+      function selectTheme(theme) {
+        const node = document.documentElement;
+        if (theme === "system") {
+          localStorage.removeItem("theme");
+        } else {
+          localStorage.setItem("theme", theme);
+        }
+        node.setAttribute("data-theme", theme);
+        $THEME = theme;
+      }
+
+      selectTheme(localStorage.getItem("theme") || "system");
+      document.documentElement.setAttribute("data-initial-load", "true");
+
+      if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+      }
+    </script>
+    <script src="{{ url_for('static', filename='scripts/htmx-bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/app.js') }}"></script>
+
+    <header>
+        <a href="{{ url_for('index') }}">Khue H. Vo</a>'s Personal Space
+    </header>
+
     <nav>
         <a href="{{ url_for('index') }}">About Me</a>
         <a href="{{ url_for('projects') }}">Projects & Experiences</a>
@@ -20,5 +51,15 @@
     <footer>
         <p>© 2026 Senior Capstone Portfolio | Built with Flask</p>
     </footer>
+
+    <div class="footer-image">
+      <canvas id="footer-canvas"></canvas>
+    </div>
+
+    <script>
+      window.setTimeout(() => {
+        document.documentElement.removeAttribute("data-initial-load");
+      }, 0);
+    </script>
 </body>
 </html>

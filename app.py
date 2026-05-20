@@ -3,7 +3,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def home():
+def index():
     # Renders your "About Me" unique combination pitch and core skills
     return render_template('index.html')
 
